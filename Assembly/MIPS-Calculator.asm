@@ -1,3 +1,5 @@
+#Simple integer calculator written in MIPS
+
 .data
 hello: .asciiz "Hello! Welcome to the Calculator!\n\n"
 num1: .asciiz "Please provide the first number: "
@@ -8,7 +10,6 @@ subtraction: .asciiz "\nThe difference of your numbers is: "
 multiplication: .asciiz "\nThe product of your numbers is: "
 
 .text
-
 addi $v0, $zero, 4
 la $a0, hello
 syscall	
