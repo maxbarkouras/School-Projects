@@ -1,5 +1,4 @@
 #binary, octal, hex converter
-#written much less miserably in python by max barkouras
 
 import re
 
