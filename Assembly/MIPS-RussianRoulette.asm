@@ -93,4 +93,4 @@ victory:
 	addi $v0, $zero, 4
 	la $a0, win			        #output win message
 	syscall
-	addi $v0, $zero, 10		 	 #exit process
+	addi $v0, $zero, 10		 	#exit process
