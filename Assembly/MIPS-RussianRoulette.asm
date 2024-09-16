@@ -1,3 +1,5 @@
+#russian roulette written in MIPS
+
 .data
 hello: .asciiz "Hello! Welcome to Russian Roulette!\n\n"
 rules: .asciiz "The revolver infront of you has 6 cartridges and a bullet in one.\nWith every shot you take, your odds of survival will go down, but your closeness to winning will go up.\nYou'll also have the option to spin the barrel after every shot, resetting your odds. You win if you're lucky enough to survive 5 shots in a row. Will you survive?\n\n"
