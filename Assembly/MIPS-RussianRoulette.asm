@@ -1,4 +1,4 @@
-#russian roulette written in MIPS
+# russian roulette written in MIPS
 
 .data
 hello: .asciiz "Hello! Welcome to Russian Roulette!\n\n"
