@@ -46,6 +46,3 @@ _start:
 section .data
     boxTitle: db "ASCII to Decimal :)", 00h
     decimalBuffer: db 16 dup(0)
-    
-
-    
