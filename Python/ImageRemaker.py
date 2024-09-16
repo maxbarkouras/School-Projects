@@ -1,5 +1,4 @@
-#pixels from image
-#written in python by max barkouras
+#pixels from image and image remaker
 
 import math
 from PIL import Image
