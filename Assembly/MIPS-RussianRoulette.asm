@@ -1,4 +1,4 @@
-# russian roulette written in MIPS
+#russian roulette written in MIPS
 
 .data
 hello: .asciiz "Hello! Welcome to Russian Roulette!\n\n"
@@ -11,7 +11,7 @@ survived: .asciiz "Congrats! You did not die, lets continue!\n"
 spun: .asciiz "Barrel spun, odds reset!\n"
 
 .text
-addi $t3, $zero, 0			#define necessary registers for comparisons
+addi $t3, $zero, 0				#define necessary registers for comparisons
 addi $t4, $zero, 1
 addi $t5, $zero, 6
 
@@ -40,29 +40,29 @@ addi $t6, $a0, 1
 loop:
 	addi $v0, $zero, 5
 	syscall				        #get user input for fire/spin
-	beq $v0, $t3, fire		#if user input is fire, jump to fire
-	beq $v0, $t4, spin		#if user input is spin, jump to spin
+	beq $v0, $t3, fire			#if user input is fire, jump to fire
+	beq $v0, $t4, spin			#if user input is spin, jump to spin
 
 fire:
-	beq $t6, $t2, dead		  #if bullet position = current position jump to dead
-	subi, $t5, $t5, 1		    #subtract 1 from $t5 to reduce odds
-	beq $t5, $t4, victory		#if only one position is left, jump to win
+	beq $t6, $t2, dead		 	#if bullet position = current position jump to dead
+	subi, $t5, $t5, 1		   	#subtract 1 from $t5 to reduce odds
+	beq $t5, $t4, victory			#if only one position is left, jump to win
 	addi $v0, $zero, 4
 	la $a0, survived		
-	syscall				          #output survived message
+	syscall				        #output survived message
 	addi $v0, $zero, 4
 	la $a0, prompt
-	syscall				          #output spin or fire message
+	syscall				        #output spin or fire message
 	add $a1, $zero, $t5		
 	addi $v0, $zero, 42
-	syscall				          #regenerate placement of round in barell, at 1/6th lower odds
+	syscall				        #regenerate placement of round in barell, at 1/6th lower odds
 	addi $t2, $a0, 1
 
 	add $a1, $zero, $t5		
 	addi $v0, $zero, 42
-	syscall				          #regenerate players position, at 1/6th lower odds
+	syscall				        #regenerate players position, at 1/6th lower odds
 	addi $t6, $a0, 1
-	j loop				          #jump to fire/spin loop
+	j loop				        #jump to fire/spin loop
 
 spin:
 	addi $t5, $zero, 6 
@@ -76,21 +76,21 @@ spin:
 	addi $t2, $a0, 1
 	addi $v0, $zero, 4
 	la $a0, spun
-	syscall				          #output barrel spun message
+	syscall				        #output barrel spun message
 	addi $v0, $zero, 4
 	la $a0, prompt
 	syscall			          	#output spin or fire message
-	j loop				          #jump to fire/spin loop
+	j loop				        #jump to fire/spin loop
 
 dead:
 	addi $v0, $zero, 4		
 	la $a0, die
-	syscall				          #output die message
+	syscall				        #output die message
 	addi $v0, $zero, 10
-	syscall				          #exit program
+	syscall				        #exit program
 	
 victory:
 	addi $v0, $zero, 4
 	la $a0, win			        #output win message
 	syscall
-	addi $v0, $zero, 10		  #exit process
+	addi $v0, $zero, 10		 	 #exit process
