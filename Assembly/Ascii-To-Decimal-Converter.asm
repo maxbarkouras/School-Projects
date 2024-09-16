@@ -1,5 +1,5 @@
 ;ascii to decimal converter
-;written miserably for x64 nasm by max barkouras
+;written miserably for x64 nasm
 
 BITS 64
 
